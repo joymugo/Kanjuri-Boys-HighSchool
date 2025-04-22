@@ -96,6 +96,8 @@ function closeLightbox() {
 }
 //END OF GALLERY
 
+
+//HAMBURGER MENU
 const openMenuBtn = document.querySelector('#open-menu-btn');
 const closeMenuBtn = document.querySelector('#close-menu-btn');
 const navMenu = document.querySelector('.nav__menu');
