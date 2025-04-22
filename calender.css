@@ -1,0 +1,293 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --color-primary: blue;
+    --color-success: forestgreen;
+    --color-danger: #f75842;
+    --color-white: white;
+    --color-light: rgba(255, 255, 255, 0.7);
+    --color-black: black;
+    --color-bg: #1f2641; /* Default background, will be overridden for body */
+    --color-bg1: #2e3267;
+    --color-bg2: rgb(26, 101, 26);
+  
+    --container-width-lg: 70%; /* Adjusted for better readability on wider screens */
+    --container-width-md: 90%;
+    --container-width-sm: 94%;
+  
+    --transition: all 400ms ease;
+  }
+  
+  body {
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.7;
+    color: var(--color-black); /* Default text color to black for white background */
+    background: var(--color-white); /* Set the background to white */
+  }
+
+  /* for every image the tag should have the following */
+  img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+  }
+  
+  .btn {
+    display: inline-block;
+    background: var(--color-white);
+    color: var(--color-black);
+    padding: 1rem 2rem;
+    border: 1px solid var(--color-black); /* Add a border for better visibility on white */
+    font-weight: 500;
+    transition: var(--transition);
+  }
+  
+  .btn:hover {
+    background: forestgreen; /* Hover background for buttons */
+    color: var(--color-white);
+    border-color: forestgreen;
+  }
+  
+  .btn-primary {
+    background: var(--color-danger);
+    color: var(--color-white);
+    border-color: var(--color-danger); /* Add border for primary button */
+  }
+  
+  .btn-primary:hover {
+    background: forestgreen;
+    color: var(--color-white);
+    border-color: forestgreen;
+  }
+
+  /**** header section***/
+  .section__head {
+
+    display: flex; /* Arrange paragraph and socials side-by-side */
+    justify-content: space-between; /* Space out the paragraph and socials */
+    align-items: center; 
+    padding: 1rem 5rem;
+  }
+  
+  .section__head p {
+    margin: 0; 
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    color: rgb(58, 50, 50);
+  }
+
+  .header__socials {
+    display: flex;
+    gap: 1rem;
+    font-size: 1rem;
+    gap: 10px;
+    padding: 0; 
+    margin: 0; 
+}
+
+  .header__socials li a{
+    font-size: 1 rem;
+    cursor: pointer;
+    transition: all 400ms ease;
+    color: var(--color-black);
+  }
+
+
+  .header__socials a:hover{
+    color: var(--color-bg2);
+  }
+
+  /****************NAVBAR****************/
+nav{
+    padding: 1rem 6rem; 
+    background: whitesmoke;
+    overflow-y: auto;
+    width: 100%;
+    height: 5rem;
+    position:relative ;
+    top: 0;
+   
+}
+
+.nav__logo h4{
+  color: var(--color-black);
+}
+
+/****change navbar styles on scroll using javascript**/
+.window-scroll{
+    background: var(--color-primary);
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0.2);
+ 
+}
+.nav__container{
+    background: #f2f2f2;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto; /* Center the container */
+}
+
+nav button{
+    display: none;
+}
+
+.nav__menu{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav__logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .nav__logo img {
+    width: auto; /* Adjust as needed */
+    height: 30px; /* Adjust as needed */
+  }
+
+.nav__menu a{
+    font-size: 0.9rem;
+    transition: all 400ms ease;
+    color: var(--color-black);
+}
+
+
+.nav__menu a:hover{
+    color: var(--color-bg2);
+    text-decoration: underline; 
+    text-underline-offset: 0.7em;
+    text-decoration-thickness: 2px;
+}
+/*****START CALENDER OF EVENTS***/
+
+.upcoming-events {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.upcoming-events h2 {
+    color: #0056b3;
+    margin-bottom: 25px;
+    font-size: 2.5em;
+    letter-spacing: 0.9px;
+}
+
+.event-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.event-card {
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    animation: fadeInUp 0.5s ease-out forwards; /* Initial fade-in animation */
+    opacity: 0;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.event-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.event-card h3 {
+    color: #333;
+    margin: 15px 10px 10px;
+    font-size: 1.5em;
+}
+
+.event-card p {
+    color: #666;
+    margin: 0 10px 10px;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.event-card .date {
+    font-style: italic;
+    color: #777;
+    margin-bottom: 8px;
+}
+
+.event-card .read-more {
+    display: inline-block;
+    background-image: linear-gradient(140deg, #5610a1, #2575fc);
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.event-card .read-more:hover {
+    background-color: #0056b3;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .event-list {
+        grid-template-columns: 1fr;
+    }
+    .event-card h3 {
+        font-size: 1.3em;
+    }
+}
+
+/****start OF FOOTER***/
+
+.last__page{
+    background: gray;
+  }
+  .copyright{
+    color: var(--color-white);
+    font-size: 1rem;
+    display: flex;
+    padding: 20px;
+  }
+  
+  .copyright h4{
+    color: var(--color-white);
+    font-size: 1rem;
+    font-weight: 200;
+  }
