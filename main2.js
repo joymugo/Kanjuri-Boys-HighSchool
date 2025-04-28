@@ -96,32 +96,37 @@ function closeLightbox() {
 }
 //END OF GALLERY
 
-
 //HAMBURGER MENU
-const openMenuBtn = document.querySelector('#open-menu-btn');
-const closeMenuBtn = document.querySelector('#close-menu-btn');
+const openMenuBtn = document.querySelector('#open-menu-btn'); // Target the ID
+const closeMenuBtn = document.querySelector('#close-menu-btn'); // Target the ID
 const navMenu = document.querySelector('.nav__menu');
+const navLinks = document.querySelectorAll('.nav__menu a');
 
-openMenuBtn.addEventListener('click', () => {
-    navMenu.style.right = '0';
-    closeMenuBtn.style.display = 'inline-block';
-    openMenuBtn.style.display = 'none';
-});
+if (openMenuBtn) { // Changed variable name
+  openMenuBtn.addEventListener('click', () => { // Changed variable name
+    navMenu.style.display = 'flex'; // Or 'block', depending on your layout
+    if (closeMenuBtn) {
+      closeMenuBtn.style.display = 'inline-block';
+      openMenuBtn.style.display = 'none'; // Changed variable name
+    }
+  });
+}
 
-closeMenuBtn.addEventListener('click', () => {
-    navMenu.style.right = '-20rem';
-    openMenuBtn.style.display = 'inline-block';
+if (closeMenuBtn) {
+  closeMenuBtn.addEventListener('click', () => {
+    navMenu.style.display = 'none';
+    openMenuBtn.style.display = 'inline-block'; // Changed variable name
     closeMenuBtn.style.display = 'none';
+  });
+}
+
+// Close the menu when a link is clicked
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    navMenu.style.display = 'none';
+    if (closeMenuBtn) {
+      closeMenuBtn.style.display = 'none';
+      openMenuBtn.style.display = 'inline-block'; // Changed variable name
+    }
+  });
 });
-
-// Close nav menu when any nav link is clicked (optional but good for UX)
-navMenu.querySelectorAll('li a').forEach(navLink => {
-    navLink.addEventListener('click', () => {
-        navMenu.style.right = '-20rem';
-        openMenuBtn.style.display = 'inline-block';
-        closeMenuBtn.style.display = 'none';
-    });
-});
-
-
-
