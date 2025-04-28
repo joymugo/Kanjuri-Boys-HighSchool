@@ -47,10 +47,14 @@
     background: var(--color-white);
     color: var(--color-black);
     padding: 1rem 2rem;
-    border: 1px solid var(--color-black); /* Add a border for better visibility on white */
-    font-weight: 500;
+    border: 1px solid var(--color-black);
+    /*Addaborderforbettervisibilityonwhite*/font-weight: 500;
     transition: var(--transition);
-  }
+    -webkit-transition: var(--transition);
+    -moz-transition: var(--transition);
+    -ms-transition: var(--transition);
+    -o-transition: var(--transition);
+}
   
   .btn:hover {
     background: forestgreen; /* Hover background for buttons */
@@ -72,7 +76,7 @@
 
   /**** header section***/
   .section__head {
-
+    
     display: flex; /* Arrange paragraph and socials side-by-side */
     justify-content: space-between; /* Space out the paragraph and socials */
     align-items: center; 
@@ -2197,6 +2201,7 @@ h1 {
     flex-direction: column;
     gap: 0;
     z-index: 100;
+    display: none; /* Added this line to initially hide the menu */
   }
 
   .nav__menu li{
@@ -2216,6 +2221,29 @@ h1 {
   .nav__menu li a:hover{
     background: #1f2641;
     color: var(--color-white);
+  }
+}
+
+/**** Media Queries for Header Section ****/
+
+/* For smaller tablets and larger phones (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+  .section__head {
+    padding: 1rem 3rem;
+    align-items: flex-start; /* Align items to the left */
+    gap: 1.5rem;
+  }
+
+  .section__head p {
+    font-size: 0.85rem; /* Slightly reduce font size */
+  }
+
+  .header__socials {
+    gap: 0.8rem;
+  }
+
+  .header__socials li a {
+    font-size: 1rem; /* Maintain icon size */
   }
 }
 
