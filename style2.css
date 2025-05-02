@@ -887,7 +887,7 @@ footer {
 /****END OF FOOTER***/
 
 .last__page{
-  background: var(--color-white);
+  background: rgb(150, 149, 149);
 }
 .copyright{
   color: var(--color-white);
