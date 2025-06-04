@@ -904,7 +904,7 @@ footer {
   font-weight: 200;
 }
 
-/***********THE SCHOOL****/
+/***********THE SCHOOL SECTION****/
 .school__section {
   height: 300px; /* Adjust as needed, or set a specific height */
   background-image: url('images/hon.jpg'); 
@@ -936,6 +936,7 @@ footer {
 }
 /****END OF INTRO ON SCHOOL*****/
 
+/*START OF PRAYER, ANTHEM AND SCHOOL CULTURE ON THE SCHOOL SECTION*/
 .prayer__theme {
   padding: 40px 20px; /* Adjust vertical and horizontal padding */
   background-color: #f9f9f9; /* Light grey background */
@@ -1017,6 +1018,7 @@ footer {
   align-items:center; 
   justify-content: center;
   text-align: center; 
+  margin-bottom: 3px;
 }
 
 .anthem__school {
@@ -1045,7 +1047,7 @@ footer {
 
 .separator4 {
   border-bottom: 3px solid var(--color-danger); /* Thinner separator */
-  width: 800px; /* Slightly wider separator */
+  width: 80%; /* Slightly wider separator */
   margin: 20px auto; /* Center the separator */
 }
 
@@ -1077,7 +1079,7 @@ footer {
 @media (max-width: 768px) {
   .anthem__school {
       padding: 40px 30px;
-      max-width: 95%;
+      max-width: 100%;
   }
 
   .be-inspired {
@@ -1097,7 +1099,8 @@ footer {
       font-size: 1rem;
   }
 }
-/***START SCHOOL SECTION****/
+
+/***START SCHOOL CULTURE SECTION****/
 
 .school-section {
   display: flex;
@@ -1180,6 +1183,144 @@ footer {
   margin: 0; 
 }
 /*****END OF THE SCHOOL SECTION PRAYER THEME***/
+
+/* --- Media Queries RESPONSIVNESS FOR SCHOOL CULTURE --- */
+
+/* For screens smaller than 992px (e.g., larger tablets, smaller desktops) */
+@media (max-width: 992px) {
+    .school-section {
+        padding: 30px;
+        flex-direction: column; /* Stack left and right panels */
+        gap: 30px; /* Space between stacked panels */
+    }
+
+    .left-panel {
+        flex: auto; /* Allow left panel to take natural width */
+        padding: 0; /* Remove specific padding for better mobile flow */
+        text-align: center; /* Center text for the stacked layout */
+    }
+
+    .left-panel h2 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .left-panel p {
+        font-size: 1,5rem;
+        margin-bottom: 20px;
+    }
+
+    .right-panel {
+        flex: auto; /* Allow right panel to take natural width */
+        padding: 25px; /* Adjust padding for the right panel */
+        gap: 15px; /* Reduce gap between panel boxes */
+        flex-direction: column; /* Stack panel boxes vertically */
+        /* To maintain the background image aspect ratio, you might need a fixed height or aspect-ratio */
+        min-height: 400px; /* Ensure right panel has enough height for the image */
+    }
+
+    .panel-box {
+        flex: none; /* Reset flex-grow/shrink to prevent unexpected sizing */
+        width: 80%; /* Give boxes a specific width */
+        max-width: 400px; /* Limit max width for readability */
+        margin: 0 auto; /* Center individual boxes */
+        padding: 15px; /* Reduce padding inside boxes */
+    }
+
+    .panel-box .icon {
+        font-size: 2em; /* Adjust icon size */
+    }
+
+    .panel-box h3 {
+        font-size: 1.3em;
+    }
+
+    .panel-box p {
+        font-size: 0.85em;
+    }
+}
+
+/* For screens smaller than 768px (e.g., tablets in portrait mode, larger mobile phones) */
+@media (max-width: 768px) {
+    .school-section {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .left-panel h2 {
+        font-size: 1.6rem;
+    }
+
+    .left-panel p {
+        font-size: 0.9rem;
+    }
+
+    .right-panel {
+        padding: 20px;
+        min-height: 350px; /* Further adjust min-height */
+        gap: 10px; /* Further reduce gap between panel boxes */
+    }
+
+    .panel-box {
+        width: 90%; /* Increase width for better fit on narrower screens */
+        max-width: none; /* Remove max-width constraint */
+        padding: 12px;
+    }
+
+    .panel-box .icon {
+        font-size: 1.8em;
+    }
+
+    .panel-box h3 {
+        font-size: 1.2em;
+    }
+
+    .panel-box p {
+        font-size: 0.8em;
+    }
+}
+
+/* For even smaller screens (e.g., mobile phones in portrait mode) */
+@media (max-width: 480px) {
+    .school-section {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .left-panel h2 {
+        font-size: 1.4rem;
+    }
+
+    .left-panel p {
+        font-size: 0.85rem;
+    }
+
+    .right-panel {
+        padding: 15px;
+        min-height: 300px; /* Smallest min-height for very small screens */
+    }
+
+    .panel-box {
+        width: 100%; /* Take full width on very small screens */
+        padding: 10px;
+    }
+
+    .panel-box .icon {
+        font-size: 1.5em;
+    }
+
+    .panel-box h3 {
+        font-size: 1em;
+    }
+
+    .panel-box p {
+        font-size: 0.75em;
+    }
+}
+
+
+
+/*START OF ABOUT SECTION*/
 .about {
   height: 250px; /* Adjust as needed, or set a specific height */
   background-image: url('images/hon.jpg'); 
