@@ -1,4 +1,9 @@
-
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
 /*base styles */
 * {
     margin: 0;
@@ -2175,72 +2180,86 @@ h1 {
 /******************START STYLING OF HAMBURGER MENU*************************/
 @media screen and (max-width: 1024px) {
 
-  nav button{
-    display: inline-block;
-    background: transparent;
-    font-size: 1.8rem;
-    color: var(--color-black);
-    cursor: pointer;
-  }
+    nav button{
+        display: inline-block;
+        background: transparent;
+        font-size: 1.8rem;
+        color: var(--color-black);
+        cursor: pointer;
+    }
 
-  nav button#close-menu-btn{
-    display: none;
-  }
+    nav button#close-menu-btn{
+        display: none;
+    }
 
-  .nav__menu{
-    position: fixed;
-    top: 5rem;
-    right: 5%;
-    height: fit-content;
-    width: 18rem;
-    flex-direction: column;
-    gap: 0;
-    z-index: 100;
-    display: none; /* Added this line to initially hide the menu */
-  }
+    .nav__container {
+        display: flex;
+        justify-content: space-between; /* Pushes logo and menu to opposite ends */
+        align-items: center;
+        width: 100%;
+        gap: 1rem;
+         /* Add horizontal padding to prevent content from touching edges */
+        box-sizing: border-box; /* ESSENTIAL: Ensures padding is included in the 100% width */
+    }
+     
+    .nav__logo img{
+        width: 3rem;
+        height: 3rem;
+        object-fit: contain;
+        margin-right: 0.2rem;
+    }
 
-  .nav__menu li{
-    width: 100%;
-    height: 5.8rem;
-  }
+    .nav__logo h4 {
+        font-size: 1rem;
+        margin: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 2;
+    }
 
-  .nav__menu li a{
-    background: #007bff;
-    box-shadow: -4rem 6rem 10rem rgba(0,0,0,0.6);
-    width: 100%;
-    height: 100%;
-    display: grid;
-    place-items: center;
-  }
+    .nav__menu{
+        position: fixed;
+        top: 5rem;
+        right: 5%;
+        height: fit-content;
+        width: 18rem;
+        flex-direction: column;
+        gap: 0;
+        z-index: 100;
+        display: none; /* Added this line to initially hide the menu */
+    }
 
-  .nav__menu li a:hover{
-    background: #1f2641;
-    color: var(--color-white);
-  }
+    .nav__menu li{
+        width: 100%;
+        height: 5.8rem;
+    }
+
+    .nav__menu li a{
+        background: #007bff;
+        box-shadow: -4rem 6rem 10rem rgba(0,0,0,0.6);
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+    }
+
+    .nav__menu li a:hover{
+        background: #1f2641;
+        color: var(--color-white);
+    }
 }
+
+
 
 /**** Media Queries for Header Section ****/
 
 /* For smaller tablets and larger phones (max-width: 1024px) */
 @media screen and (max-width: 1024px) {
-  .section__head {
-    padding: 1rem 3rem;
-    align-items: flex-start; /* Align items to the left */
-    gap: 1.5rem;
+  header {
+        display: none;
+    }
   }
-
-  .section__head p {
-    font-size: 0.85rem; /* Slightly reduce font size */
-  }
-
-  .header__socials {
-    gap: 0.8rem;
-  }
-
-  .header__socials li a {
-    font-size: 1rem; /* Maintain icon size */
-  }
-}
 
 /**** Media Queries for Header Section ****/
 
