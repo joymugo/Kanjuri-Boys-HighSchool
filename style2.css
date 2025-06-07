@@ -2654,6 +2654,18 @@ h1 {
 /******************START STYLING OF HAMBURGER MENU*************************/
 @media screen and (max-width: 1024px) {
 
+
+    nav{
+    padding: 1rem 2rem;
+    background: whitesmoke;
+    overflow-y: auto;
+    width: 100%;
+    height: 5rem;
+    position: relative;
+    top: 0;
+   
+    } 
+
     nav button{
         display: inline-block;
         background: transparent;
@@ -2666,14 +2678,14 @@ h1 {
         display: none;
     }
 
-    .nav__container {
-        display: flex;
-        justify-content: space-between; /* Pushes logo and menu to opposite ends */
-        align-items: center;
-        width: 100%;
-        gap: 1rem;
-         /* Add horizontal padding to prevent content from touching edges */
-        box-sizing: border-box; /* ESSENTIAL: Ensures padding is included in the 100% width */
+    .nav__container{
+    background: #f2f2f2;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 1.5rem;
     }
      
     .nav__logo img{
