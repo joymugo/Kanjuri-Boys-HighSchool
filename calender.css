@@ -291,3 +291,146 @@ nav button{
     font-size: 1rem;
     font-weight: 200;
   }
+
+  /******************START STYLING OF HAMBURGER MENU*************************/
+@media screen and (max-width: 1024px) {
+
+
+    nav{
+    padding: 1rem 2rem;
+    background: whitesmoke;
+    overflow-y: auto;
+    width: 100%;
+    height: 5rem;
+    position: relative;
+    top: 0;
+   
+    } 
+
+    nav button{
+        display: inline-block;
+        background: transparent;
+        font-size: 1.8rem;
+        color: var(--color-black);
+        cursor: pointer;
+    }
+
+    nav button#close-menu-btn{
+        display: none;
+    }
+
+    .nav__container{
+    background: #f2f2f2;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 1.5rem;
+    }
+     
+    .nav__logo img{
+        width: 3rem;
+        height: 3rem;
+        object-fit: contain;
+        margin-right: 0.2rem;
+    }
+
+    .nav__logo h4 {
+        font-size: 1rem;
+        margin: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 2;
+    }
+
+    .nav__menu{
+        position: fixed;
+        top: 5rem;
+        right: 5%;
+        height: fit-content;
+        width: 18rem;
+        flex-direction: column;
+        gap: 0;
+        z-index: 100;
+        display: none; /* Added this line to initially hide the menu */
+    }
+
+    .nav__menu li{
+        width: 100%;
+        height: 5.8rem;
+    }
+
+    .nav__menu li a{
+        background: #007bff;
+        box-shadow: -4rem 6rem 10rem rgba(0,0,0,0.6);
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+    }
+
+    .nav__menu li a:hover{
+        background: #1f2641;
+        color: var(--color-white);
+    }
+}
+
+
+
+/**** Media Queries for Header Section ****/
+
+/* For smaller tablets and larger phones (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+  header {
+        display: none;
+    }
+  }
+
+
+  
+/**** Media Queries for Header Section ****/
+
+/* For smaller tablets and larger phones (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+  .section__head {
+    padding: 1rem 3rem; 
+    align-items: flex-start; /* Align items to the left */
+    gap: 1.5rem; 
+  }
+
+  .section__head p {
+    font-size: 0.85rem; /* Slightly reduce font size */
+  }
+
+  .header__socials {
+    gap: 0.8rem; 
+  }
+
+  .header__socials li a {
+    font-size: 1rem; /* Maintain icon size */
+  }
+}
+
+/* For mobile devices (max-width: 600px) */
+@media screen and (max-width: 600px) {
+  .section__head {
+    padding: 1rem 1.5rem; /* Further reduce padding for mobile */
+    gap: 1rem; /* Adjust spacing for smaller screens */
+  }
+
+  .section__head p {
+    font-size: 0.8rem; /* Further reduce font size for better readability */
+    line-height: 1.4; /* Improve line height for smaller text */
+  }
+
+  .header__socials {
+    font-size: 0.9rem; /* Slightly reduce icon size on mobile */
+    gap: 0.6rem; /* Further adjust gap */
+  }
+
+  .header__socials li a {
+    font-size: 0.9rem; /* Maintain consistency */
+  }
+}
