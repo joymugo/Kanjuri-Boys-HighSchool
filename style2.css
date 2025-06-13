@@ -202,7 +202,7 @@ nav button{
     left: 0;
     width: 100%;
     height: 100%;
-    background-color:#006400D9;
+    background-color:#033f03d9;
     display: flex;
     align-items: center; /* Vertically align content */
     justify-content: space-between; /* Put slider on left, text on right */
@@ -371,6 +371,197 @@ nav button{
     font-size: 1.1rem;
 }
 /***PAGE 2 END***/
+
+/* Core Values Section Styling */
+.core-values-section {
+    background-color: #f8f8f8; /* Light background to make it stand out */
+    padding: 60px 0; /* Top and bottom padding */
+    text-align: center; /* Center the main heading */
+}
+
+
+.core-values-section .container {
+    max-width: 1200px; /* Same max-width as your content section for consistency */
+    margin: 0 auto; /* Center the container */
+    padding: 0 20px; /* Horizontal padding for smaller screens */
+}
+
+.core-values-section h2 {
+    text-align: center;
+    font-size: 2.8em;
+    color: #004085; /* Deep blue from your previous styling */
+    margin-bottom: 50px;
+    position: relative; /* For the underline effect */
+    display: inline-block; /* Makes border-bottom apply only to the text width */
+    padding-bottom: 10px; /* Space for the underline */
+}
+
+.core-values-section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 80px; /* Length of the underline */
+    height: 4px;
+    background-color: #004085; /* Color of the underline */
+    border-radius: 2px;
+}
+
+
+.values-grid {
+    display: grid;
+    /* Responsive grid: 3 columns on large screens, 2 on medium, 1 on small */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px; /* Space between value items */
+    margin-top: 30px;
+}
+
+.value-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* More pronounced shadow for each card */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-item:hover {
+    transform: translateY(-8px); /* Lift effect on hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+.value-item ion-icon {
+    font-size: 3.5em; /* Large icon size */
+    color: #007bff; /* A brighter blue for icons */
+    margin-bottom: 15px;
+    display: block; /* Ensures proper spacing */
+}
+
+.value-item h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.value-item p {
+    font-size: 0.95em;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Ensure the element is initially hidden or off-screen if you want a "fly-in" effect */
+.landing-title {
+    opacity: 0; /* Start invisible */
+    transform: translateY(-50px); /* Start 50px above its final position (or scale, or rotate) */
+    /* Add animation properties */
+    animation: slideInFromTop 1s ease-out forwards; /* Name, duration, timing, fill-mode */
+    animation-delay: 0.5s; /* Delay before animation starts (optional) */
+}
+
+/* Define the animation */
+@keyframes slideInFromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px); /* Start point */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End point (original position) */
+    }
+}
+
+/* --- Alternative "Zoom-in" or "Fade-in" Landing Effect --- */
+
+/* For a gentle fade-in and slight scale */
+.landing-title.fade-zoom-in {
+    opacity: 0;
+    transform: scale(0.9); /* Start slightly smaller */
+    animation: fadeInZoom 1.2s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes fadeInZoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* For a simple fade-in */
+.landing-title.fade-in {
+    opacity: 0;
+    animation: fadeIn 3s ease-in forwards;
+    animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .values-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust columns for tablets */
+    }
+    .core-values-section h2 {
+        font-size: 2.2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .core-values-section {
+        padding: 40px 0;
+    }
+    .values-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust columns further for smaller tablets */
+        gap: 20px;
+    }
+    .core-values-section h2 {
+        font-size: 2em;
+        margin-bottom: 40px;
+    }
+    .value-item {
+        padding: 25px;
+    }
+    .value-item ion-icon {
+        font-size: 3em;
+    }
+}
+
+@media (max-width: 480px) {
+    .core-values-section {
+        padding: 30px 0;
+    }
+    .values-grid {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+        gap: 15px;
+    }
+    .core-values-section h2 {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+    .value-item {
+        padding: 20px;
+    }
+    .value-item ion-icon {
+        font-size: 2.5em;
+    }
+    .value-item h3 {
+        font-size: 1.3em;
+    }
+}
+
+/*END OF ADDITIONAL BEFORE PAGE 3***/
 
 .Page3{
   position: relative;
@@ -1011,7 +1202,7 @@ footer {
 }
 /*****END OF PRAYER SECTION****/
 .anthem__theme {
-  background: url(images/bom.jpg);
+  background: url(images/logo-school.png);
   background-size: cover;
   height: 100%;
   display: flex; 
@@ -1663,6 +1854,88 @@ footer {
 }
 /*****END OF SECTION PERFORMANCE ON ACADEMICS***/
 
+
+/* Content Section Styling */
+.content-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #024f0f;
+    border-radius: 5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Left Section Styling */
+.left-section,
+.right-section {
+    flex: 1; /* Allows both sections to grow and shrink equally */
+    min-width: 300px; /* Minimum width before wrapping to next line */
+    padding: 20px; /* Internal padding for each section */
+    /* You can add a background or border if you want visual separation between the left and right */
+    /* background-color: #fdfdfd; */
+    /* border: 1px solid #eee; */
+    /* border-radius: 8px; */
+}
+
+.left-section h2,
+.right-section h3 {
+    color: #ffffff; /* A deep blue, similar to the main theme */
+    font-size: 2em;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #0570e2; /* Underline effect for headings */
+    padding-bottom: 10px;
+    display: inline-block; /* Makes border-bottom apply only to the text width */
+}
+
+.left-section p,
+.right-section p {
+    font-size: 1em;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .content-section {
+        flex-direction: column; /* Stack columns vertically on smaller screens */
+        padding: 20px;
+        gap: 20px; /* Adjust gap for vertical stacking */
+    }
+
+    .left-section,
+    .right-section {
+        min-width: auto; /* Allow full width on small screens */
+        padding: 15px;
+    }
+
+    .left-section h2,
+    .right-section h3 {
+        font-size: 1.6em;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-section {
+        padding: 15px;
+    }
+
+    .left-section h2,
+    .right-section h3 {
+        font-size: 1.4em;
+    }
+
+    .left-section p,
+    .right-section p {
+        font-size: 0.95em;
+    }
+}
+
+/*****START OF ABOUT SCHOOL SECTION IN ABOUT PAGE******/
 .about-school-section {
   font-family: sans-serif;
   padding: 40px;

@@ -1,0 +1,578 @@
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0 auto;
+    background-color: #f0f2f5; /* Light gray background */
+    color: #333;
+}
+
+
+/* Main Container for the Single Video Layout */
+.main-grid-single-video {
+    max-width: 960px; /* Adjust max width of the entire display */
+    margin: 30px auto; /* Center it with top/bottom margin */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 20px; /* Internal padding for the whole container */
+    display: flex; /* Use flexbox for channel details and subscribe button */
+    flex-direction: column; /* Stack video area and channel details vertically */
+    gap: 20px; /* Space between video wrapper and channel details */
+}
+
+/* Wrapper for Video Area and Social Sidebar */
+.video-container-wrapper {
+    display: flex; /* Arrange video area and social sidebar horizontally */
+    gap: 15px; /* Space between video and social sidebar */
+    align-items: flex-start; /* Align to the top */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Main Video Player Area */
+.main-video-area {
+    position: relative; /* For absolute positioning of overlays */
+    flex-grow: 1; /* Allows it to take up available space */
+    flex-basis: 70%; /* Minimum width before wrapping */
+    min-width: 300px; /* Minimum width for the video area */
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (height / width = 9 / 16 = 0.5625) */
+    background-color: #000; /* Placeholder background */
+    border-radius: 8px;
+    overflow: hidden; /* Ensure rounded corners */
+}
+
+.main-video-link-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    z-index: 1; /* Place above play icon but below overlays */
+}
+
+.youtube-banner-main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Fill the space, crop if necessary */
+    display: block;
+}
+
+/* Play Icon Overlay (Center of the video) */
+.play-icon-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px; /* Size of the circle */
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 2; /* Above the video thumbnail */
+    transition: background-color 0.3s ease;
+}
+
+.play-icon-overlay::before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 25px solid #fff; /* White play triangle */
+    margin-left: 5px; /* Adjust triangle position */
+}
+
+.main-video-link-overlay:hover .play-icon-overlay {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* Video Overlays (Watch on Youtube, Share, Watch Later) */
+.video-overlays {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* Align "Watch on Youtube" to bottom */
+    z-index: 3; /* Above play icon and banner */
+    pointer-events: none; /* Allow clicks to pass through to the main video link by default */
+}
+
+.overlay-button {
+    pointer-events: auto; /* Make buttons themselves clickable */
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.overlay-button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.overlay-button ion-icon {
+    margin-right: 5px;
+    font-size: 1.1em;
+}
+
+.top-right-overlay-buttons {
+    display: flex;
+    gap: 10px;
+    align-self: flex-start; /* Align to top right */
+    margin-left: auto; /* Pushes to the right */
+}
+
+.top-right-overlay-buttons .small-btn {
+    padding: 6px 12px;
+    border-radius: 20px; /* More rounded */
+    font-size: 0.8em;
+}
+
+
+/* Social Share Sidebar */
+.social-share-sidebar {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.social-icon-btn {
+    color: #555;
+    font-size: 1.8em; /* Size of the icons */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 5px; /* Make icon area slightly larger for clicking */
+}
+
+.social-icon-btn:hover {
+    color: #039022; /* Example hover color */
+}
+.social-icon-btn ion-icon {
+    display: block; /* Ensure ion-icon itself respects padding/margins */
+}
+
+
+/* Channel Details Section */
+.channel-details-section {
+    display: flex;
+    justify-content: space-between; /* Pushes subscribe button to the right */
+    align-items: center;
+    padding: 15px 0; /* Add vertical padding */
+    border-top: 1px solid #eee; /* Separator line */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 15px; /* Space between channel info and subscribe button if wrapped */
+}
+
+.channel-info-main {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between logo and text */
+}
+
+.channel-logo-main {
+    width: 60px; /* Larger logo */
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.channel-info-main div {
+    /* Contains title, handle, subscribers */
+}
+
+.channel-title {
+    font-size: 1.4em; /* Larger title */
+    font-weight: bold;
+    margin: 0 0 5px 0;
+    color: #222;
+}
+
+.channel-handle,
+.subscribers-videos {
+    font-size: 0.9em;
+    color: #606060;
+    margin: 0;
+}
+
+.subscribers-videos {
+    margin-top: 3px;
+}
+
+/* Main Subscribe Button */
+.subscribe-button-main {
+    display: inline-flex;
+    align-items: center;
+    background-color: #cc0000; /* YouTube red */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px; /* More rounded pill shape */
+    font-weight: bold;
+    font-size: 1em;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    white-space: nowrap; /* Prevent text wrapping */
+    flex-shrink: 0; /* Prevent shrinking on smaller screens */
+}
+
+.subscribe-button-main ion-icon {
+    margin-right: 8px;
+    font-size: 1.2em;
+}
+
+.subscribe-button-main:hover {
+    background-color: #a30000;
+    transform: translateY(-1px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main-grid-single-video {
+        padding: 15px;
+    }
+
+    .video-container-wrapper {
+        flex-direction: column; /* Stack video area and social sidebar vertically */
+        gap: 20px;
+    }
+
+    .social-share-sidebar {
+        flex-direction: row; /* Make social icons horizontal on smaller screens */
+        justify-content: center; /* Center them */
+        padding: 10px;
+        gap: 20px;
+    }
+
+    .channel-details-section {
+        flex-direction: column; /* Stack channel info and subscribe button vertically */
+        align-items: flex-start; /* Align channel info to left */
+        gap: 10px;
+    }
+
+    .subscribe-button-main {
+        width: 100%; /* Make button full width */
+        justify-content: center; /* Center text in button */
+    }
+
+    .main-video-area {
+        flex-basis: auto; /* Reset flex-basis for column layout */
+    }
+}
+
+@media (max-width: 480px) {
+    .main-grid-single-video {
+        padding: 10px;
+    }
+
+    .channel-logo-main {
+        width: 50px;
+        height: 50px;
+    }
+
+    .channel-title {
+        font-size: 1.2em;
+    }
+
+    .overlay-button {
+        padding: 6px 10px;
+        font-size: 0.8em;
+    }
+
+    .top-right-overlay-buttons .small-btn {
+        padding: 4px 8px;
+        font-size: 0.7em;
+    }
+}
+/* End of Single Video Grid Layout */
+
+/*Start of Video Grid Layout */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem; /* Adjust the gap between video items */
+    max-width: 1000px; /* Adjust this value to control the maximum width of the grid */
+    margin: 0 auto;  /* Center the grid */
+    padding: 1rem;
+}
+
+.video-item {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.video-item:hover {
+    transform: translateY(-5px);
+}
+
+.youtube-banner {
+    width: 100%; /* Make the image fill the container */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+}
+
+.video-info {
+    display: flex;
+    padding: 1rem;
+    align-items: flex-start;
+}
+
+.channel-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.video-info h3 {
+    font-size: 1.1em;
+    margin: 0 0 0.5rem 0;
+    color: #333;
+}
+
+.video-info .channel-name,
+.video-info .upload-time {
+    font-size: 0.9em;
+    color: #777;
+    margin: 0;
+}
+
+/* Pagination Styling */
+.pagination {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.pagination .page-number,
+.pagination .next-page {
+    display: inline-block;
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #194fef; /* Blue for links */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination .page-number.active,
+.pagination .page-number:hover,
+.pagination .next-page:hover {
+    background-color: #0366d6;
+    color: #fff;
+    border-color: #0366d6;
+}
+
+.pagination span {
+    padding: 8px 15px;
+    color: #606060;
+}
+
+/* Basic Responsiveness for Smaller Screens */
+@media (max-width: 768px) {
+    .video-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .video-item img {
+        height: 180px;
+    }
+
+    .video-info h3 {
+        font-size: 1em;
+    }
+
+    .pagination .page-number,
+    .pagination .next-page {
+        padding: 6px 12px;
+        font-size: 0.9em;
+    }
+}
+
+/******************START STYLING OF HAMBURGER MENU*************************/
+@media screen and (max-width: 1024px) {
+
+
+    nav{
+    padding: 1rem 2rem;
+    background: whitesmoke;
+    overflow-y: auto;
+    width: 100%;
+    height: 5rem;
+    position: relative;
+    top: 0;
+   
+    } 
+
+    nav button{
+        display: inline-block;
+        background: transparent;
+        font-size: 1.8rem;
+        color: var(--color-black);
+        cursor: pointer;
+    }
+
+    nav button#close-menu-btn{
+        display: none;
+    }
+
+    .nav__container{
+    background: #f2f2f2;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 1.5rem;
+    }
+     
+    .nav__logo img{
+        width: 3rem;
+        height: 3rem;
+        object-fit: contain;
+        margin-right: 0.2rem;
+    }
+
+    .nav__logo h4 {
+        font-size: 1rem;
+        margin: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 2;
+    }
+
+    .nav__menu{
+        position: fixed;
+        top: 5rem;
+        right: 5%;
+        height: fit-content;
+        width: 18rem;
+        flex-direction: column;
+        gap: 0;
+        z-index: 100;
+        display: none; /* Added this line to initially hide the menu */
+    }
+
+    .nav__menu li{
+        width: 100%;
+        height: 5.8rem;
+    }
+
+    .nav__menu li a{
+        background: #007bff;
+        box-shadow: -4rem 6rem 10rem rgba(0,0,0,0.6);
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+    }
+
+    .nav__menu li a:hover{
+        background: #1f2641;
+        color: var(--color-white);
+    }
+}
+
+
+
+/**** Media Queries for Header Section ****/
+
+/* For smaller tablets and larger phones (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+  header {
+        display: none;
+    }
+  }
+
+/**** Media Queries for Header Section ****/
+
+/* For smaller tablets and larger phones (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+  .section__head {
+    padding: 1rem 3rem; 
+    align-items: flex-start; /* Align items to the left */
+    gap: 1.5rem; 
+  }
+
+  .section__head p {
+    font-size: 0.85rem; /* Slightly reduce font size */
+  }
+
+  .header__socials {
+    gap: 0.8rem; 
+  }
+
+  .header__socials li a {
+    font-size: 1rem; /* Maintain icon size */
+  }
+}
+
+/* For mobile devices (max-width: 600px) */
+@media screen and (max-width: 600px) {
+  .section__head {
+    padding: 1rem 1.5rem; /* Further reduce padding for mobile */
+    gap: 1rem; /* Adjust spacing for smaller screens */
+  }
+
+  .section__head p {
+    font-size: 0.8rem; /* Further reduce font size for better readability */
+    line-height: 1.4; /* Improve line height for smaller text */
+  }
+
+  .header__socials {
+    font-size: 0.9rem; /* Slightly reduce icon size on mobile */
+    gap: 0.6rem; /* Further adjust gap */
+  }
+
+  .header__socials li a {
+    font-size: 0.9rem; /* Maintain consistency */
+  }
+}
