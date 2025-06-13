@@ -7,7 +7,8 @@
       "default",
       {
         "document-title": "off",
-        "image-alt": "off"
+        "image-alt": "off",
+        "frame-title": "off"
       }
     ],
     "axe/name-role-value": [

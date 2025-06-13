@@ -1202,7 +1202,7 @@ footer {
 }
 /*****END OF PRAYER SECTION****/
 .anthem__theme {
-  background: url(images/logo-school.png);
+  background: url(images/class.jpg);
   background-size: cover;
   height: 100%;
   display: flex; 
@@ -1855,7 +1855,7 @@ footer {
 /*****END OF SECTION PERFORMANCE ON ACADEMICS***/
 
 
-/* Content Section Styling */
+/* Content Section Styling in about page */
 .content-section {
     display: flex;
     justify-content: space-between;
@@ -1876,10 +1876,6 @@ footer {
     flex: 1; /* Allows both sections to grow and shrink equally */
     min-width: 300px; /* Minimum width before wrapping to next line */
     padding: 20px; /* Internal padding for each section */
-    /* You can add a background or border if you want visual separation between the left and right */
-    /* background-color: #fdfdfd; */
-    /* border: 1px solid #eee; */
-    /* border-radius: 8px; */
 }
 
 .left-section h2,
