@@ -145,8 +145,12 @@ body {
 
 .top-right-overlay-buttons .small-btn {
     padding: 6px 12px;
-    border-radius: 20px; /* More rounded */
-    font-size: 0.8em;
+    border-radius: 20px;
+    /*Morerounded*/font-size: 0.8em;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
 }
 
 

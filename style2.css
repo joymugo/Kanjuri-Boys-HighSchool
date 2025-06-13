@@ -202,7 +202,7 @@ nav button{
     left: 0;
     width: 100%;
     height: 100%;
-    background-color:#033f03d9;
+    background-color: #0762d9D9;
     display: flex;
     align-items: center; /* Vertically align content */
     justify-content: space-between; /* Put slider on left, text on right */
@@ -2943,35 +2943,9 @@ h1 {
         cursor: pointer;
     }
 
-    nav button#close-menu-btn{
-        display: none;
-    }
-
-    .nav__container{
-    background: #f2f2f2;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    gap: 1.5rem;
-    }
-     
-    .nav__logo img{
-        width: 3rem;
-        height: 3rem;
-        object-fit: contain;
-        margin-right: 0.2rem;
-    }
-
-    .nav__logo h4 {
-        font-size: 1rem;
-        margin: 0;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        line-height: 2;
-    }
+  nav button#close-menu-btn{
+    display: none;
+  }
 
     .nav__menu{
         position: fixed;
